@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Latihan JQuery</title>
+	</head>
+	<body>
+		<button type="button" id="btn_klik"> Klik Saya</button>
+		<button type="button" class="btn_klik_2">Klik Saya Juga Dong</button>
+
+<!--
+Penggunaan Javascript :
+		<script type="text/javascript">
+			document.getElementById("btn_klik").onclick = function(){
+				alert("Klik Berhasil !");
+			}
+		</script>
+-->
+		
+		<a href="#">Sebuah Link</a>
+		
+		<button type="button" id ="btn_hide">Tombol Hide </button>
+		<button type="button" id="btn_show">Tombol Show</button>
+		<h1 id="h1_hide_and_show">Sebuah Text</h1>
+		
+		<select name="select_change" id="select_change">
+			<option value="laki-laki">Laki-laki</option>
+			<option value="Perempuan">Perempuan</option>
+		</select>
+		
+<!-- 	Penggunaan dasar JQuery =	$(selector).event(action); -->
+		<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+			
+			//membuat event change
+			$("#select_change").change(function(){
+				var jeniskelamin = $('#select_change').val();
+				alert("Dropdown berhasil diubah! menjadi " + jeniskelamin);
+			});
+			
+			
+			$(".btn_klik_2").click(function(){
+				alert("Klik Berhasil");
+				console.log("Klik dengan ID berhasil");
+			});
+			$("a").dblclick(function(){
+				alert("Klik Berhasil");
+			});
+			
+			//membuat event mouseover
+			$("#btn_hide").mouseover(function(){
+				$("#h1_hide_and_show").hide();
+			});
+			
+			$("#btn_show").click(function(){
+				$("#h1_hide_and_show").show();
+			});
+		</script>
+	
+		
+	</body>
+</html>
